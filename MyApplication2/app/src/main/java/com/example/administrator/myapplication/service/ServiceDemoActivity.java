@@ -81,8 +81,9 @@ public class ServiceDemoActivity extends Activity {
         @Override//service的绑定回调    具体组件名称已连接的服务   Binder对象
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
             Log.i("ServiceConnection","onServiceConnected");
-            MyService.MyBinder myBinder= (MyService.MyBinder) iBinder;//通过MyService类拿到MyBinder对象并进行强转
-            myBinder.playMusic();//用拿到的对象调用palyMusic();
+          MyService.MyBinder myBinder= (MyService.MyBinder) iBinder;//通过MyService类拿到MyBinder对象并进行强转
+           myBinder.play();
+           //用拿到的对象调用paly();
         }
 
         @Override//service kill掉时的回调方法

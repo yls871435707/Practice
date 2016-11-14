@@ -2,12 +2,14 @@ package com.example.administrator.myapplication.service;
 
 import android.app.Service;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Binder;
-import android.os.Build;
-import android.os.Bundle;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.util.Log;
+
+import com.example.administrator.myapplication.R;
+
 
 /**
  * Created by Administrator on 2016/11/14.
@@ -20,13 +22,15 @@ public class MyService extends Service {
             return MyService.this;
         }
 
-        public void playMusic() {
+        public void play() {
             MyService.this.playMusic();
         }
     }
                 //播放音乐的方法
     public void playMusic() {
-        Log.i("MyService", "playMusic");
+        MediaPlayer mediaPlayer=MediaPlayer.create(this,R.raw.yskl);
+        mediaPlayer.start();
+        Log.i("MyService", "mediaPlayer");
     }
 
     @Nullable
@@ -59,10 +63,11 @@ public class MyService extends Service {
     }
 
     @Override//开启一个service可以重复创建
-    //                         intent对象     标记     每次service的id
+    //                         intent对象     标记//可以在销毁的时候重启服务     每次service的id
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.i("MyService", "onStartCommand");
-
+        flags=START_STICKY;
+        //playMusic();
         return START_STICKY;
         //返回的三种模式
         //START_REDELIVER_INTENT kill掉重新开启的时候会从新调用服务
