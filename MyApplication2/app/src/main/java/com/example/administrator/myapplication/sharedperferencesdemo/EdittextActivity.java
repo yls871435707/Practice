@@ -1,4 +1,4 @@
-package sharedperferencesdemo;
+package com.example.administrator.myapplication.sharedperferencesdemo;
 
 import android.app.Activity;
 import android.content.Context;

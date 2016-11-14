@@ -1,4 +1,4 @@
-package sqlliterdemo;
+package com.example.administrator.myapplication.sqlliterdemo;
 
 import android.content.Context;
 import android.database.DatabaseErrorHandler;

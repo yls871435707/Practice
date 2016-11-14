@@ -1,4 +1,4 @@
-package sqlliterdemo;
+package com.example.administrator.myapplication.sqlliterdemo;
 
 import android.app.Activity;
 import android.content.ContentValues;
@@ -132,7 +132,7 @@ public class MySQLiterDateActivity extends Activity {
                 for (int i = 0; i < num; i++) {
                     String columnNamevalues = cursor.getColumnName(i);
                     String values = cursor.getString(i);
-                    Log.i("columnNamevalues========", columnNamevalues);
+                    Log.i("columnNamevalues===", columnNamevalues);
                     Log.i("values========", values);
                 }
             }

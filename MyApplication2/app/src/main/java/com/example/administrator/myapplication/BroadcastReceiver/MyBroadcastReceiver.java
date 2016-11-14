@@ -1,4 +1,4 @@
-package BroadcastReceiver;
+package com.example.administrator.myapplication.BroadcastReceiver;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
